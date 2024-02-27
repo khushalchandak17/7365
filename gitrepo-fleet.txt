@@ -1,0 +1,73 @@
+marcin@DI2USMIF15044WH:~/repos/gitlabci-library$ kubectl --kubeconfig=/home/marcin/kubeconfigs/local-op-prod get gitrepo -n fleet-service   cert-manager -o yaml
+apiVersion: fleet.cattle.io/v1alpha1
+kind: GitRepo
+metadata:
+  annotations:
+    field.cattle.io/description: JetStack Certificate Manager
+    meta.helm.sh/release-name: vsphere-wv-prod-service
+    meta.helm.sh/release-namespace: fleet-service
+    objectset.rio.cattle.io/id: default-vsphere-wv-prod-service-cattle-fleet-local-system
+  creationTimestamp: "2022-10-05T09:10:59Z"
+  generation: 91
+  labels:
+    app.kubernetes.io/instance: vsphere-wv-prod-service
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: vsphere-wv-prod-service
+    helm.sh/chart: vsphere-wv-prod-service-2.0.399
+    objectset.rio.cattle.io/hash: 51e0af65426b01586e42c847afdbce098f04564e
+  name: cert-manager
+  namespace: fleet-service
+  resourceVersion: "560761408"
+  uid: 60f84c38-f0a7-46a4-8ba4-bb2c1ec2222b
+spec:
+  clientSecretName: gitlab-caas-ops
+  forceSyncGeneration: 6
+  paths:
+  - cert-manager
+  paused: false
+  repo: https://gitlab.industrysoftware.automation.siemens.com/caas-ops/helm-external.git
+  revision: 1.0.342
+  targets:
+  - clusterSelector: {}
+    name: all
+status:
+  commit: 1.0.342
+  conditions:
+  - lastUpdateTime: "2023-12-13T11:58:31Z"
+    status: "True"
+    type: Ready
+  - lastUpdateTime: "2023-12-14T07:08:31Z"
+    status: "True"
+    type: Accepted
+  - lastUpdateTime: "2022-10-05T09:10:59Z"
+    status: "True"
+    type: ImageSynced
+  - lastUpdateTime: "2023-12-14T07:08:31Z"
+    status: "True"
+    type: Synced
+  - lastUpdateTime: "2023-12-14T07:08:31Z"
+    status: "False"
+    type: Reconciling
+  - lastUpdateTime: "2022-10-05T09:11:00Z"
+    status: "False"
+    type: Stalled
+  desiredReadyClusters: 1
+  display:
+    readyBundleDeployments: 1/1
+  gitJobStatus: Current
+  lastSyncedImageScanTime: null
+  observedGeneration: 91
+  readyClusters: 1
+  resourceCounts:
+    desiredReady: 0
+    missing: 0
+    modified: 0
+    notReady: 0
+    orphaned: 0
+    ready: 0
+    unknown: 0
+    waitApplied: 0
+  summary:
+    desiredReady: 1
+    ready: 1
+marcin@DI2USMIF15044WH:~/repos/gitlabci-library$
